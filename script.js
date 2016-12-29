@@ -40,3 +40,23 @@ let circleArea3 = r => 3.14 * r * r; //ES 6 the most simplified version of the a
 console.log(circleArea1(7));
 console.log(circleArea2(7));
 console.log(circleArea3(7));
+
+// 3rd Tutorial Template Literals
+
+let name = 'Bucky';
+console.log('My favorite person is not ' + name + ' because he is really weird.');// ES 5 Way
+console.log(`My faovorite person is not ${name} because he is really weird.`);
+
+let a = 5;
+let b = 7;
+console.log(`It can also add two variables ( {a = 5 and b = 7} | ${a + b}) together if they are numbers`); // ES 6
+
+let c = 6;
+let d = 8;
+let cd = c + d;
+console.log(`Best Practice ${cd}`); // ES 6 Best practice to add the variables together.
+
+//ES 6 Template Literals allow you to input a new line without using the newline character '\n', just hit enter put in a new line.
+console.log(`This is the first line, 
+	and this is the second.`);
+console.log(``);
