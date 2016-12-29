@@ -1,5 +1,5 @@
 'use strict';
-
+//Tutorial 1 ****************** Let variable
 //let variable is declared from the block that it was declared
 function theNotebook() {
 	let movie = 'The Notebook';
@@ -23,7 +23,7 @@ function buckyFunction() {
 } 
 buckyFunction();
 
-// Arrow Functions
+// Tutorial 2 ****************** Arrow Functions
 function circleArea1(r) {  // ES 5
 	const PI = 3.14;
 	return PI * r * r;
@@ -41,7 +41,7 @@ console.log(circleArea1(7));
 console.log(circleArea2(7));
 console.log(circleArea3(7));
 
-// 3rd Tutorial Template Literals
+// Tutorial 3 ***************** Template Literals
 
 let name = 'Bucky';
 console.log('My favorite person is not ' + name + ' because he is really weird.');// ES 5 Way
@@ -60,3 +60,24 @@ console.log(`Best Practice ${cd}`); // ES 6 Best practice to add the variables t
 console.log(`This is the first line, 
 	and this is the second.`);
 console.log(``);
+
+// Tutorial 4. ***************** Spread Operator
+function addNumbers1(a, b, c) { //ES 5 Beginning
+	console.log(a + b + c);
+}
+
+var nums = [3, 4, 5];
+addNumbers1(nums[0], nums[1], nums[2]); //ES 5 End
+
+function addNumbers2(a, b, c) { //ES 6 Version
+	console.log(a + b + c);
+}
+var nums2 = [2, 4, 5];
+addNumbers2(...nums); // ES 6 Version End
+
+// The object is to take the meats array and add it to the food array, but after apples and not after.
+var meats = ['bacon', 'steak'];
+var food = ['apples', ...meats,'bananas', 'strawberries', 'ice cream'];
+console.log(food); 
+
+//Tutorial 5 *************** Classes
