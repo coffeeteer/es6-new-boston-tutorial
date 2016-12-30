@@ -81,3 +81,82 @@ var food = ['apples', ...meats,'bananas', 'strawberries', 'ice cream'];
 console.log(food); 
 
 //Tutorial 5 *************** Classes
+
+class Person {
+	constructor(name, age, weight){
+		this.name = name;
+		this.age = age;
+		this.weight = weight;
+	}
+
+	displayName() {
+		console.log(this.name);
+	}
+
+	displayAge() {
+		console.log(this.age);
+	}
+
+	displayWeight(){
+		console.log(this.weight);
+	}
+}
+
+const travis = new Person('Travis', 33, 200);
+const jen = new Person('Jen', 44, 150);
+
+travis.displayWeight();
+//jen.displayWeight();
+
+// Tutorial 6 ***************** Inheritance (including  the class from tutorial 5)
+// Inheritance is creating one base class and making functions that you share to keep the programs DRY
+
+class Programmer extends Person{
+	constructor(name, age, weight, language){
+		super(name, age, weight);
+		this.language = language;
+	}
+	displayLanguage() {
+		console.log(this.language);
+	}
+}
+
+jen.displayWeight();
+jen.displayAge();
+jen.displayName();
+
+const benji = new Programmer('Benjamin Moneytree', 2, 200, 'JavaScript');
+benji.displayWeight();
+benji.displayAge();
+benji.displayName();
+benji.displayLanguage();
+
+// Tutorial 7 **************** Generators
+// Generator Functions allow your program functions to pause and wait to be called again.
+function* sampleGenerator() {
+	yield 'coca-cola';
+	yield 'seltzer';
+	console.log('Okay this is the line after seltzer.');
+	yield 'Diet Pepsi';
+}
+
+const sample = sampleGenerator(); // coca-cola 
+console.log(sample.next().value); // seltzer
+console.log(sample.next().value); // 'Okay this is th...'
+console.log(sample.next().value); // Diet Pepsi
+console.log(sample.next().value); // undefined
+
+console.log('--------------');
+
+function* getNextId (){
+	let id = 0;
+	while(id < 3)
+		yield id++;	
+}
+
+let createUser = getNextId();
+console.log(createUser.next().value); // 0
+console.log(createUser.next().value); // 1
+console.log(createUser.next().value); // 2
+console.log('Code is over now');
+console.log(createUser.next().value); // undefined
